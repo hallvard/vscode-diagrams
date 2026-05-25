@@ -1,0 +1,63 @@
+{
+  "name": "vscode-plantuml-core-gen",
+  "displayName": "PlantUML Core Generator",
+  "description": "Core framework for generating read-only virtual PlantUML documents with pluggable generators.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodePlantumlCoreGen.openAsVirtualPlantUml",
+        "title": "PlantUML: Open As Virtual Diagram",
+        "icon": {
+          "light": "icons/plantuml-icon.svg",
+          "dark": "icons/plantuml-icon.svg"
+        }
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vscodePlantumlCoreGen.openAsVirtualPlantUml",
+          "when": "resourceScheme == file",
+          "group": "navigation",
+          "icon": {
+            "light": "icons/plantuml-icon.svg",
+            "dark": "icons/plantuml-icon.svg"
+          }
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "vscodePlantumlCoreGen.openAsVirtualPlantUml",
+          "when": "resourceScheme == file",
+          "group": "navigation",
+          "icon": {
+            "light": "icons/plantuml-icon.svg",
+            "dark": "icons/plantuml-icon.svg"
+          }
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "vscode-plantuml-gen-api": "file:../vscode-plantuml-gen-api"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,9 @@
+field1: value1
+field2: value2
+nested_field:
+  nested_key1: nested_value1
+  nested_key2: nested_value2
+list_field:
+  - item1
+  - item2
+  - item4

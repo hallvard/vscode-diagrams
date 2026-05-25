@@ -1,0 +1,16 @@
+{
+  "name": "vscode-plantuml-gen-api",
+  "version": "0.0.1",
+  "description": "Shared API contracts for PlantUML transform extensions",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "prepare": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  }
+}
