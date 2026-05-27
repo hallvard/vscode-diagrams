@@ -1,24 +1,18 @@
 import * as vscode from "vscode";
 
 import { PLANTUML_CORE_EXTENSION_ID, PlantUmlCoreApi } from "vscode-plantuml-gen-api";
-import { JsonPlantUmlGenerator } from "./generators/jsonPlantUmlGenerator";
-import { YamlPlantUmlGenerator } from "./generators/yamlPlantUmlGenerator";
+import { JavaClassPlantUmlGenerator } from "./generators/javaClassPlantUmlGenerator";
 
-const JSON_PUML_GENERATOR = "json2puml";
-const YAML_PUML_GENERATOR = "yaml2puml";
+const JAVA_CLASS_PUML_GENERATOR = "java2class";
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
   const coreExtension = vscode.extensions.getExtension<PlantUmlCoreApi>(PLANTUML_CORE_EXTENSION_ID);
   if (coreExtension) {
     const coreApi = await coreExtension.activate();
     context.subscriptions.push(
-      coreApi.registerGenerator(JSON_PUML_GENERATOR, new JsonPlantUmlGenerator(), {
+      coreApi.registerGenerator(JAVA_CLASS_PUML_GENERATOR, new JavaClassPlantUmlGenerator(), {
         scheme: "file",
-        fileExtension: ".json",
-      }),
-      coreApi.registerGenerator(YAML_PUML_GENERATOR, new YamlPlantUmlGenerator(), {
-        scheme: "file",
-        fileExtension: [".yaml", ".yml"],
+        fileExtension: ".java",
       })
     );
   }

@@ -4,7 +4,7 @@ export const OPEN_AS_VIRTUAL_PUML_COMMAND = "vscodePlantumlCoreGen.openAsVirtual
 
 type OpenAsVirtualPlantUmlDeps = {
   getSupportedGenKeys: (sourceUri: vscode.Uri) => string[] | Promise<string[]>;
-  toVirtualPlantUmlUri: (sourceUri: vscode.Uri, genKey: string) => vscode.Uri;
+  toVirtualPlantUmlUri: (sourceUri: vscode.Uri, genKey: string) => vscode.Uri | Promise<vscode.Uri>;
 };
 
 export function registerOpenAsVirtualPlantUmlCommand(deps: OpenAsVirtualPlantUmlDeps): vscode.Disposable {
@@ -25,7 +25,7 @@ export function registerOpenAsVirtualPlantUmlCommand(deps: OpenAsVirtualPlantUml
       return;
     }
 
-    const virtualUri = deps.toVirtualPlantUmlUri(sourceUri, selectedGenKey);
+    const virtualUri = await deps.toVirtualPlantUmlUri(sourceUri, selectedGenKey);
 
     const doc = await vscode.workspace.openTextDocument(virtualUri);
     try {

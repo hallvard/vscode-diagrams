@@ -1,7 +1,7 @@
 {
-  "name": "vscode-plantuml-json-yaml-gen",
-  "displayName": "PlantUML JSON/YAML Generators",
-  "description": "Registers JSON and YAML source-to-PlantUML generators into PlantUML Core Generator.",
+  "name": "vscode-plantuml-sql-er-gen",
+  "displayName": "PlantUML SQL ER Generator",
+  "description": "Registers a SQL CREATE TABLE to PlantUML ER generator into PlantUML Core Generator.",
   "version": "0.0.1",
   "publisher": "local",
   "engines": {

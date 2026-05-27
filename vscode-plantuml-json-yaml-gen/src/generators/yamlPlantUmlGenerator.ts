@@ -1,12 +1,12 @@
 import * as path from "node:path";
 import * as vscode from "vscode";
 
-import { PlantUmlGenerator } from "vscode-plantuml-gen-api";
+import { PlantUmlGenerator, SourceContext } from "vscode-plantuml-gen-api";
 
 export class YamlPlantUmlGenerator implements PlantUmlGenerator {
-  public supportsSourceUri(sourceUri: vscode.Uri): boolean {
-    const ext = path.posix.extname(sourceUri.path).toLowerCase();
-    return ext === ".yaml" || ext === ".yml";
+  public supportsSourceUri(sourceContext: SourceContext): boolean {
+    void sourceContext;
+    return true;
   }
 
   public generate(sourceUri: vscode.Uri, sourceText: string, options: URLSearchParams): string {

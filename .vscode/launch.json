@@ -9,12 +9,16 @@
       "type": "extensionHost",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}/vscode-plantuml-core-gen",
-        "--extensionDevelopmentPath=${workspaceFolder}/vscode-plantuml-json-yaml-gen"
+        "--extensionDevelopmentPath=${workspaceFolder}/vscode-plantuml-json-yaml-gen",
+        "--extensionDevelopmentPath=${workspaceFolder}/vscode-plantuml-sql-er-gen",
+        "--extensionDevelopmentPath=${workspaceFolder}/vscode-plantuml-java2class-gen"
       ],
       "name": "Launch Extension",
       "outFiles": [
         "${workspaceFolder}/vscode-plantuml-core-gen/out/**/*.js",
-        "${workspaceFolder}/vscode-plantuml-json-yaml-gen/out/**/*.js"
+        "${workspaceFolder}/vscode-plantuml-json-yaml-gen/out/**/*.js",
+        "${workspaceFolder}/vscode-plantuml-sql-er-gen/out/**/*.js",
+        "${workspaceFolder}/vscode-plantuml-java2class-gen/out/**/*.js"
       ]
     }
 

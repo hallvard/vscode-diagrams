@@ -1,11 +1,12 @@
 import * as path from "node:path";
 import * as vscode from "vscode";
 
-import { PlantUmlGenerator } from "vscode-plantuml-gen-api";
+import { PlantUmlGenerator, SourceContext } from "vscode-plantuml-gen-api";
 
 export class JsonPlantUmlGenerator implements PlantUmlGenerator {
-  public supportsSourceUri(sourceUri: vscode.Uri): boolean {
-    return path.posix.extname(sourceUri.path).toLowerCase() === ".json";
+  public supportsSourceUri(sourceContext: SourceContext): boolean {
+    void sourceContext;
+    return true;
   }
 
   public generate(sourceUri: vscode.Uri, sourceText: string, options: URLSearchParams): string {
